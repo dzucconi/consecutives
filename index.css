@@ -1,0 +1,14 @@
+body {
+  background-color: white;
+  color: black;
+  margin: 0;
+  hyphens: auto;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+i {
+  font-style: normal;
+}
