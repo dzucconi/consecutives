@@ -26,23 +26,33 @@ document.body.style.fontFamily = options.font_family;
 document.body.style.fontSize = options.font_size;
 document.body.style.textAlign = options.text_align;
 
+const runner = body => {
+  let text = body;
+
+  if (body.match('HTTP Basic: Access denied.')) {
+    throw Error(body);
+  }
+
+  if (!coerce.boolean(options.break)) {
+    text = text.replace(/ /g, decode('&nbsp;'));
+  }
+
+  const stage = document.getElementById('stage');
+  const frames = generate(text, coerce.integer(options.width)).map(wrap);
+  const separator = coerce.string(options.separator);
+
+  stage.innerHTML = insert(frames, separator);
+
+  const run = limit => draw(options.fps, () =>
+    stage.innerHTML = insert(R.take(limit, generate.step(frames)), separator)
+  );
+
+  trim(stage, limit => run(limit)());
+};
+
 get(options.id)
-  .then(body => {
-    let text = body;
-
-    if (!coerce.boolean(options.break)) {
-      text = text.replace(/ /g, decode('&nbsp;'));
-    }
-
-    const stage = document.getElementById('stage');
-    const frames = generate(text, coerce.integer(options.width)).map(wrap);
-    const separator = coerce.string(options.separator);
-
-    stage.innerHTML = insert(frames, separator);
-
-    const run = limit => draw(options.fps, () =>
-      stage.innerHTML = insert(R.take(limit, generate.step(frames)), separator)
-    );
-
-    trim(stage, limit => run(limit)());
+  .then(runner)
+  .catch(err => {
+    console.error(err);
+    runner(options.id);
   });
