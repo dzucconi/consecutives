@@ -10,3 +10,18 @@
   - **URL**: https://damonzucconi-consecutives.netlify.com/
 - **Host**: https://app.netlify.com/sites/damonzucconi-consecutives/overview
 - **Deploys**: Merged PRs to `dzucconi/consecutives#master` are automatically deployed to production. [Manually trigger a deploy](https://app.netlify.com/sites/damonzucconi-consecutives/deploys)
+
+## Parameters
+
+| Param              | Description                        | Type         |
+| ------------------ | ---------------------------------- | ------------ |
+| `id`               | Mesa ID, overloaded to bare string | `string`     |
+| `fps`              | Frames-per-second                  | `number`     |
+| `width`            | Constrains width (column)          | `number`     |
+| `separator`        | String that joins each iteration   | `string`     |
+| `break`            | Break after each iteration         | `string`     |
+| `background_color` | Background color                   | `html color` |
+| `color`            | Text color                         | `color`      |
+| `font_family`      | Font family                        | `string`     |
+| `font_size`        | Font size                          | `string`     |
+| `text_align`       | Text alignment                     | `string`     |
