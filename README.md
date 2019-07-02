@@ -21,7 +21,7 @@
 | `separator`        | String that joins each iteration   | `string`     |
 | `break`            | Break after each iteration         | `string`     |
 | `background_color` | Background color                   | `html color` |
-| `color`            | Text color                         | `color`      |
+| `color`            | Text color                         | `html color` |
 | `font_family`      | Font family                        | `string`     |
 | `font_size`        | Font size                          | `string`     |
 | `text_align`       | Text alignment                     | `string`     |
