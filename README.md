@@ -19,7 +19,7 @@
 | `fps`              | Frames-per-second                  | `number`     |
 | `width`            | Constrains width (column)          | `number`     |
 | `separator`        | String that joins each iteration   | `string`     |
-| `break`            | Break after each iteration         | `string`     |
+| `break`            | Break after each iteration         | `boolean`    |
 | `background_color` | Background color                   | `html color` |
 | `color`            | Text color                         | `html color` |
 | `font_family`      | Font family                        | `string`     |
