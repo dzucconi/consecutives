@@ -1,9 +1,9 @@
 import { times, aperture, split, join } from "ramda";
 import decode from "./decode";
 
-const NBSP = decode("&nbsp;");
+export const NBSP = decode("&nbsp;");
 
-const generate = (text, width) => {
+const generate = (text: string, width: number) => {
   if (text.length < width) {
     console.error(`Max 'width' is ${text.length}`);
     width = text.length;
@@ -17,7 +17,7 @@ const generate = (text, width) => {
   return xs;
 };
 
-generate.step = xs => {
+generate.step = <T>(xs: T[]) => {
   xs.push(xs.shift());
   return xs;
 };
