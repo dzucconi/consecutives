@@ -3,18 +3,22 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html"
   },
   "author": "Damon Zucconi",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "7.13.8",
     "@babel/preset-env": "7.13.9",
+    "@types/ramda": "^0.27.38",
     "parcel-bundler": "1.12.4",
-    "s3-cli": "0.13.0"
+    "s3-cli": "0.13.0",
+    "typescript": "^4.2.2"
   },
   "dependencies": {
+    "frame-interval": "^1.0.47",
+    "queryparams": "^1.1.0",
     "ramda": "^0.27.0",
     "whatwg-fetch": "^3.0.0"
   }
