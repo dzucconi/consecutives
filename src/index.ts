@@ -1,25 +1,12 @@
 import { take } from "ramda";
 import { configure } from "queryparams";
 import { FrameInterval } from "frame-interval";
+import { get, Response } from "./lib/get";
+import { NBSP, generate } from "./lib/generate";
+import { trim } from "./lib/trim";
+import { DEFAULTS } from "./lib/defaults";
 
-import { get } from "./lib/get";
-import generate, { NBSP } from "./lib/generate";
-import trim from "./lib/trim";
-
-const { params } = configure({
-  // Configuration
-  id: "debug",
-  fps: 30,
-  width: 25,
-  separator: "",
-  break: true,
-  // Style
-  background_color: "black",
-  color: "white",
-  font_family: "sans-serif",
-  font_size: "20px",
-  text_align: "left",
-});
+const { params } = configure(DEFAULTS);
 
 const wrap = (x: string) => `<span>${x}</span>`;
 
@@ -32,8 +19,14 @@ document.body.style.fontFamily = params.font_family;
 document.body.style.fontSize = params.font_size;
 document.body.style.textAlign = params.text_align;
 
-const runner = (body: string) => {
-  let text = body;
+const init = (res: Response | string) => {
+  let text: string;
+
+  if (typeof res === "string") {
+    text = res;
+  } else {
+    text = res.entity.body;
+  }
 
   if (!params.break) {
     text = text.replace(/ /g, NBSP);
@@ -59,8 +52,8 @@ const runner = (body: string) => {
 };
 
 get(params.id)
-  .then(runner)
+  .then(init)
   .catch((err) => {
     console.error(err);
-    runner(params.id);
+    init(params.id);
   });

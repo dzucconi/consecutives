@@ -3,7 +3,7 @@ import decode from "./decode";
 
 export const NBSP = decode("&nbsp;");
 
-const generate = (text: string, width: number) => {
+export const generate = (text: string, width: number) => {
   if (text.length < width) {
     console.error(`Max 'width' is ${text.length}`);
     width = text.length;
@@ -21,5 +21,3 @@ generate.step = <T>(xs: T[]) => {
   xs.push(xs.shift());
   return xs;
 };
-
-export default generate;

@@ -7,15 +7,10 @@ const QUERY = `
   query($criteria: JSON!) {
     consecutives: object {
       ... on Collection {
-        id
-        name
         contents(metadata: $criteria) {
-          id
           metadata
           entity {
-            kind: __typename
             ... on Text {
-              id
               name
               body
             }
@@ -26,7 +21,24 @@ const QUERY = `
   }
 `;
 
-export const get = async (id: string) => {
+export type Response = {
+  metadata: Partial<{
+    id: string;
+    break: string;
+    color: string;
+    title: string;
+    width: string;
+    separator: string;
+    text_align: string;
+    background_color: string;
+  }>;
+  entity: {
+    name: string;
+    body: string;
+  };
+};
+
+export const get = async (id: string): Promise<Response> => {
   const res = await fetch(ENDPOINT, {
     method: "POST",
     body: JSON.stringify({
@@ -47,6 +59,5 @@ export const get = async (id: string) => {
 
   const [content] = contents;
 
-  // TODO: return typed metadata as well
-  return content.entity.body;
+  return content;
 };
