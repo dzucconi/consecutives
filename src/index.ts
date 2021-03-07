@@ -13,6 +13,12 @@ const wrap = (x: string) => `<span>${x}</span>`;
 const insert = (xs: string[], separator: string) =>
   xs.join(`<i>${separator}</i>`);
 
+document.body.style.backgroundColor = params.background_color;
+document.body.style.color = params.color;
+document.body.style.fontFamily = params.font_family;
+document.body.style.fontSize = params.font_size;
+document.body.style.textAlign = params.text_align;
+
 const init = (res: Response | string) => {
   let text: string;
   let metadata: Partial<Defaults> = {};
@@ -27,13 +33,14 @@ const init = (res: Response | string) => {
       ...coerce(res.metadata, DEFAULTS),
       ...coerce(query),
     };
-  }
 
-  document.body.style.backgroundColor = metadata.background_color;
-  document.body.style.color = metadata.color;
-  document.body.style.fontFamily = metadata.font_family;
-  document.body.style.fontSize = metadata.font_size;
-  document.body.style.textAlign = metadata.text_align;
+    // Reset document properties incase any are changing
+    document.body.style.backgroundColor = metadata.background_color;
+    document.body.style.color = metadata.color;
+    document.body.style.fontFamily = metadata.font_family;
+    document.body.style.fontSize = metadata.font_size;
+    document.body.style.textAlign = metadata.text_align;
+  }
 
   if (!metadata.break) {
     text = text.replace(/ /g, NBSP);
