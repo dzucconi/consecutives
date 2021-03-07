@@ -17,9 +17,9 @@
     "typescript": "4.2.3"
   },
   "dependencies": {
-    "frame-interval": "^1.0.47",
-    "queryparams": "^1.1.0",
-    "ramda": "^0.27.0",
-    "whatwg-fetch": "^3.0.0"
+    "frame-interval": "1.0.47",
+    "queryparams": "1.2.1",
+    "ramda": "^0.27.1",
+    "whatwg-fetch": "^3.6.2"
   }
 }
