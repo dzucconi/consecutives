@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "frame-interval": "1.0.47",
-    "queryparams": "1.2.1",
+    "queryparams": "1.2.2",
     "ramda": "^0.27.1",
     "whatwg-fetch": "^3.6.2"
   }
