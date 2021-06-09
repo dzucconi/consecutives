@@ -9,8 +9,8 @@
   "author": "Damon Zucconi",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "7.14.3",
-    "@babel/preset-env": "7.14.4",
+    "@babel/core": "7.14.5",
+    "@babel/preset-env": "7.14.5",
     "@types/ramda": "0.27.40",
     "parcel-bundler": "1.12.5",
     "s3-cli": "0.13.0",
