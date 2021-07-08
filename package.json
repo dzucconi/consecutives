@@ -11,7 +11,7 @@
   "devDependencies": {
     "@babel/core": "7.14.6",
     "@babel/preset-env": "7.14.7",
-    "@types/ramda": "0.27.43",
+    "@types/ramda": "0.27.44",
     "parcel-bundler": "1.12.5",
     "s3-cli": "0.13.0",
     "typescript": "4.3.5"
