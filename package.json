@@ -11,7 +11,7 @@
   "devDependencies": {
     "@babel/core": "7.16.7",
     "@babel/preset-env": "7.16.8",
-    "@types/ramda": "0.27.63",
+    "@types/ramda": "0.27.64",
     "parcel-bundler": "1.12.5",
     "s3-cli": "0.13.0",
     "typescript": "4.5.4"
@@ -19,7 +19,7 @@
   "dependencies": {
     "frame-interval": "1.0.47",
     "queryparams": "1.2.2",
-    "ramda": "^0.27.1",
+    "ramda": "^0.28.0",
     "whatwg-fetch": "^3.6.2"
   }
 }
