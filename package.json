@@ -14,7 +14,7 @@
     "@types/ramda": "0.27.64",
     "parcel-bundler": "1.12.5",
     "s3-cli": "0.13.0",
-    "typescript": "4.5.4"
+    "typescript": "4.5.5"
   },
   "dependencies": {
     "frame-interval": "1.0.47",
